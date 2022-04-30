@@ -3,6 +3,7 @@ package com.wilkom.awsspringbootdevtest.controller;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.wilkom.awsspringbootdevtest.controller.model.Player;
 import com.wilkom.awsspringbootdevtest.controller.model.PositionEnum;
@@ -26,7 +27,8 @@ public class MainController {
         players.add(new Player(2L, "AGASSA", "Kossi", PositionEnum.goaltender, Boolean.FALSE, teamA));
         players.add(new Player(3L, "AKAKPO", "Serge", PositionEnum.defenseman, Boolean.FALSE, teamA));
         players.add(new Player(4L, "TCHANGAI", "Mazamesso", PositionEnum.defenseman, Boolean.FALSE, teamA));
-        teamA.setPlayers(players);
+        teamA.setPlayers(players.stream().sorted(
+                (p1, p2) -> p1.getName().compareTo(p2.getName())).collect(Collectors.toSet()));
         return new ResponseEntity<>(teamA, HttpStatus.OK);
     }
 }
