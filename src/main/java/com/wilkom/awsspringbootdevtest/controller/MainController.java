@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping
     public ResponseEntity<?> SayGoodMorning() {
-        Team teamA = new Team(1, "Atchou Dété", 1999, null);
+        Team teamA = new Team(1, "Nibombé DARE", 1999, null);
         Set<Player> players = new HashSet<>();
         players.add(new Player(1L, "ADEBAYOR", "Emmanuel", PositionEnum.forward, Boolean.TRUE, teamA));
         players.add(new Player(2L, "AGASSA", "Kossi", PositionEnum.goaltender, Boolean.FALSE, teamA));
