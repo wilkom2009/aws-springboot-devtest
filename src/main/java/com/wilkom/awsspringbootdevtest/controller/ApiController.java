@@ -10,6 +10,6 @@ public class ApiController {
 
     @GetMapping("/hello")
     public String SayGoodMorning() {
-        return "Good morning from my API....";
+        return "Good morning from my API...";
     }
 }
