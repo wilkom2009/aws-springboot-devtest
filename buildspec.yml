@@ -5,16 +5,14 @@ phases:
       java: corretto11
   pre_build:
     commands:
-    - echo In the pre_build phase...
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
-    - echo Build started on `date`
+      - echo Build started on `date`
+      - mvn install
   post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
-    - mv target/aws-springboot-devtest-0.0.1-SNAPSHOT.jar aws-springboot-devtest-0.0.1-SNAPSHOT.jar
+      - echo Build completed on `date`
 artifacts:
   files:
-  - aws-springboot-devtest-0.0.1-SNAPSHOT.jar
-  - .ebextensions/**/*
+    - target/*.jar
