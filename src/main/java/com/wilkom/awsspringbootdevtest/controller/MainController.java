@@ -25,6 +25,7 @@ public class MainController {
         players.add(new Player(1L, "ADEBAYOR", "Emmanuel", PositionEnum.forward, Boolean.TRUE, teamA));
         players.add(new Player(2L, "AGASSA", "Kossi", PositionEnum.goaltender, Boolean.FALSE, teamA));
         players.add(new Player(3L, "AKAKPO", "Serge", PositionEnum.defenseman, Boolean.FALSE, teamA));
+        players.add(new Player(4L, "TCHANGAI", "Mazamesso", PositionEnum.defenseman, Boolean.FALSE, teamA));
         teamA.setPlayers(players);
         return new ResponseEntity<>(teamA, HttpStatus.OK);
     }
